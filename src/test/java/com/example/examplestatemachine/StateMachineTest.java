@@ -38,9 +38,13 @@ public class StateMachineTest {
     @Test
     public void test_3() {
         sc.actionA();
+        assertTrue(sc.isAccept());
         sc.actionB();
+        assertFalse(sc.isAccept());
         sc.actionA();
+        assertTrue(sc.isAccept());
         sc.actionB();
+        assertFalse(sc.isAccept());
         sc.actionA();
         assertTrue(sc.isAccept());
     }
